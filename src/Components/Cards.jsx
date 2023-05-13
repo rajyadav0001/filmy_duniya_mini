@@ -1,56 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactStars from 'react-stars'
+import { Oval } from "react-loader-spinner";
+import { getDocs } from "firebase/firestore";
+import { moviesRef } from "../firebase/firebase";
 
 const Cards = () => {
-  const [data, setData] = useState([
-    {
-      Name: "Avengers Endgame",
-      Rating: 5,
-      Year: 2019,
-      img: "https://m.media-amazon.com/images/I/71niXI3lxlL._SY679_.jpg",
-    },
-    {
-        Name: "Avengers Endgame",
-        Rating: 3,
-        Year: 2019,
-        img: "https://m.media-amazon.com/images/I/71niXI3lxlL._SY679_.jpg",
-    },
-    {
-        Name: "Avengers Endgame",
-        Rating: 4.5,
-        Year: 2019,
-        img: "https://m.media-amazon.com/images/I/71niXI3lxlL._SY679_.jpg",
-    },
-    {
-        Name: "Avengers Endgame",
-        Rating: 3.5,
-        Year: 2019,
-        img: "https://m.media-amazon.com/images/I/71niXI3lxlL._SY679_.jpg",
-    },
-    {
-        Name: "Avengers Endgame",
-        Rating: 2,
-        Year: 2019,
-        img: "https://m.media-amazon.com/images/I/71niXI3lxlL._SY679_.jpg",
-    },
-    
+  const [data, setData] = useState([]);
+  const [loading,setLoading] = useState(false);
+  useEffect(()=>{
+      async function getData(){
+        setLoading(true);
+        const _data = getDocs(moviesRef);
 
-  ]);
+        setLoading(false);    
+      }
+      getData();
+  },[])
   return (
     <div className="flex flex-wrap justify-between p-4 ">
-      {data.map((ele, i) => {
+    { loader ? <div className="w-full flex justify-center items-center min-h-screen "><Oval color="white" /></div>: 
+      data.map((ele, i) => {
         return (
           <div key={i} className="card shadow-lg p-1 font-medium hover:-translate-y-3 cursor-pointer mt-8 transition-all duration-500 ">
-            <img className="h-80 w-60 " src={ele.img} alt=""/>
+            <img className="h-80 w-60 " src={ele.image} alt=""/>
             <h1>
-              <span className="text-gray-400 ">Name:</span> {ele.Name}
+              <span className="text-gray-400 ">Name:</span> {ele.title}
             </h1>
             <h1 className="flex items-center">
               <span className="text-gray-400 mr-1 ">Rating:</span><ReactStars
                 size={20}
                 half={true}
                 edit={false}
-                value={ele.Rating}
+                value={4}
                />
                 
             </h1>
@@ -59,7 +40,8 @@ const Cards = () => {
             </h1>
           </div>
         );
-      })}
+      })
+    }
     </div>
   );
 };
