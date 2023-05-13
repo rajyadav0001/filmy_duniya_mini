@@ -1,7 +1,8 @@
  
+import { Route, Routes } from 'react-router-dom';
 import Header from "./Components/Header";
 import Cards from "./Components/Cards";
-import { Route, Routes } from 'react-router-dom';
+import AddMovie from './Components/AddMovie';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Header/>
         <Routes>
             <Route path="/" element={<Cards/>} />
+            <Route path="/addmovie" element={<AddMovie/>} />
         </Routes>
     </div>
   );
