@@ -23,6 +23,12 @@ const AddMovie = () => {
                 buttons: false,
                 timer: 2000
             })
+            setForm({
+              title: "",
+              year: "",
+              description: "",
+              image: ""
+            })
         }catch(error){
             swal({
                title:error,
