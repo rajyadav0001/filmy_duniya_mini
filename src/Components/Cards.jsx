@@ -38,7 +38,7 @@ const Cards = () => {
                 size={20}
                 half={true}
                 edit={false}
-                value={4}
+                value={ele.rating/ele.rated}
                />
                 
             </h1>
