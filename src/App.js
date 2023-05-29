@@ -6,7 +6,7 @@ import AddMovie from './Components/AddMovie';
 import Detail from './Components/Detail';
 import { createContext, useState } from 'react';
 import Login from './Components/Login';
-import Singup from './Components/Singup';
+import Signup from './Components/Signup';
 
 const AppState = createContext();
 
@@ -24,7 +24,7 @@ function App() {
               <Route path="/addmovie" element={<AddMovie/>} />
               <Route path="/detail/:id" element={<Detail/>} />
               <Route path="/login" element={<Login/>} />
-              <Route path="/signup" element={<Singup/>} />
+              <Route path="/signup" element={<Signup/>} />
           </Routes>
       </div>
     </AppState.Provider>
