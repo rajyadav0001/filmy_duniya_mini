@@ -85,7 +85,7 @@ const Signup = () => {
         <>
           <div className="p-2 w-full md:w-1/3">
             <div className="relative">
-              <label for="message" className="leading-7 text-sm text-gray-100">
+              <label htmlFor="message" className="leading-7 text-sm text-gray-100">
                  Enter OTP:
               </label>
               <input
@@ -109,7 +109,7 @@ const Signup = () => {
            
           <div className="p-2 w-full md:w-1/3">
             <div className="relative">
-              <label for="message" className="leading-7 text-sm text-gray-100">
+              <label htmlFor="message" className="leading-7 text-sm text-gray-100">
                 Name:
               </label>
               <input
@@ -123,7 +123,7 @@ const Signup = () => {
           </div>
           <div className="p-2 w-full md:w-1/3">
             <div className="relative">
-              <label for="message" className="leading-7 text-sm text-gray-100">
+              <label htmlFor="message" className="leading-7 text-sm text-gray-100">
                 Mobile No:
               </label>
               <input
@@ -138,7 +138,7 @@ const Signup = () => {
           </div>
           <div className="p-2 w-full md:w-1/3">
             <div className="relative">
-              <label for="message" className="leading-7 text-sm text-gray-100">
+              <label htmlFor="message" className="leading-7 text-sm text-gray-100">
                 Password:
               </label>
               <input

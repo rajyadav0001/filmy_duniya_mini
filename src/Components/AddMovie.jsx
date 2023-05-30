@@ -54,7 +54,7 @@ const AddMovie = () => {
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">
-                  <label for="name" className="leading-7 text-sm text-gray-100">
+                  <label htmlFor="name" className="leading-7 text-sm text-gray-100">
                     Title
                   </label>
                   <input
@@ -72,7 +72,7 @@ const AddMovie = () => {
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="leading-7 text-sm text-gray-100"
                   >
                     Year
@@ -91,7 +91,7 @@ const AddMovie = () => {
               <div className="p-2 w-full">
                 <div className="relative">
                   <label
-                    for="message"
+                    htmlFor="message"
                     className="leading-7 text-sm text-gray-100"
                   >
                     Image Link
@@ -110,7 +110,7 @@ const AddMovie = () => {
               <div className="p-2 w-full">
                 <div className="relative">
                   <label
-                    for="message"
+                    htmlFor="message"
                     className="leading-7 text-sm text-gray-100"
                   >
                     Description
